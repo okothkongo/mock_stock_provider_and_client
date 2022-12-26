@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "phoenix-channels": "^1.0.0"
+    "phoenix-channels": "^1.0.0",
+    "ws": "^8.11.0"
   }
 }

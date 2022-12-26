@@ -32,6 +32,25 @@ app.listen(port, () => {
 })
 
 
+// websocket server
+
+const { Server } = require('ws');
+ 
+const sockserver = new Server({ port: 5000 });
+sockserver.on('connection', (ws) => {
+   console.log('New client connected!'); 
+  
+});
+
+
+setInterval(() => {
+  sockserver.clients.forEach((client) => {
+      const data = JSON.stringify({data: all_companies});
+      let data1 = client.send(data);
+      data1
+  });
+}, 1200000);
+
 // client
 
 const {Socket, Channel} = require("phoenix-channels")
