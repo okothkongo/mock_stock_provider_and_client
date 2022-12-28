@@ -13,7 +13,7 @@ function company_constructor(){
     stock_market: faker.commerce.productAdjective(),
     name: faker.company.name(),
     symbol: faker.company.name().substring(0, 3),
-    category: faker.commerce.department(),
+    category:`TBD-2022${Math.floor(Math.random() * 15)}`,
     stock_price: Number(faker.finance.amount()),
     timestamp: faker.date.between(six_hours_ago(), new Date )
   };
