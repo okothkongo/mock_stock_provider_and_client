@@ -31,6 +31,11 @@ const newCompanies = (timestamp) => allCompanies.filter(company => company.times
 const express = require('express')
 const app = express()
 const port = 3000
+
+app.get('/api/companies', (req, res) => {
+  res.send({data:   allCompanies})
+
+})
 app.get('/api/companies/:timestamp', (req, res) => {
    const timestamp = req.params.timestamp 
    date = new Date(timestamp)
@@ -71,7 +76,7 @@ setInterval(() => {
      client.send(data);
       
   });
-}, 3000 * 1000); // you cant around with value to increase or decrease push interval
+}, 3000 * 1000); // you can mess around with value to increase or decrease push interval
 
 
 // websocket cleint
